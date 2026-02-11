@@ -1,0 +1,81 @@
+/* Category list - dashboard style */
+:root{
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --primary: #004a99;
+  --accent: #0284c7;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(15,23,42,0.06);
+}
+
+.category-page{
+  padding: 28px;
+  background: transparent;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.category-title{
+  margin: 0 0 18px 0;
+  font-size: 20px;
+  color: var(--text);
+  font-weight:700;
+}
+
+.category-grid{
+  display:grid;
+  gap:20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: stretch; /* ensure cards stretch to same height */
+  grid-auto-rows: 1fr; /* make each row's tracks equal height so cards match */
+}
+
+/* Desktop specific: 4 columns across and exactly 2 rows when 8 items present */
+@media (min-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.category-card{
+  background:var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:18px 16px;
+  min-height:140px;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+  border-left:4px solid rgba(0,74,153,0.06);
+  height:100%; /* fill the grid cell so all cards equal height */
+}
+
+.category-card:hover{ transform: translateY(-6px); box-shadow: 0 20px 40px rgba(15,23,42,0.08); }
+
+.category-card-body h3{ margin:0 0 8px 0; font-size:16px; color:var(--text); font-weight:700 }
+.category-desc{ margin:0; color:var(--muted); font-size:13px }
+
+.category-card-footer{ margin-top:12px; display:flex; justify-content:flex-end }
+
+.apply-btn{ background: var(--primary); color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:600; box-shadow:0 8px 24px rgba(0,74,153,0.12) }
+.apply-btn:hover{ opacity:0.96 }
+
+.muted{ color:var(--muted) }
+.error{ color:#b91c1c }
+
+.voice-controls select{ border-radius:8px }
+.voice-controls .apply-btn{ padding:8px 10px }
+
+.confirmation{ background: #fff; border-radius:10px; box-shadow: 0 6px 18px rgba(15,23,42,0.04) }
+
+/* Ensure voice-related texts are readable */
+.voice-status,
+.recognized-text,
+.confirmation {
+  color: #000 !important;
+}
+
+.category-pill{ display:inline-block; background:#f1f5f9; padding:6px 10px; border-radius:999px; font-weight:600; color:var(--primary); margin-top:6px }

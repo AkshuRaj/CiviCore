@@ -1,0 +1,408 @@
+/* Use global tokens where possible */
+:root{ 
+  --primary: #004a99; 
+  --accent: #0284c7; 
+  --text: #0f172a; 
+  --muted: #6b7280; 
+  --card: #ffffff; 
+  --radius: 10px; 
+  --shadow: 0 8px 30px rgba(15,23,42,0.06);
+  --input-border: #e2e8f0;
+  --input-bg: #f8fafc;
+  --input-focus: #0284c7;
+  --input-hover: #f1f5f9;
+}
+
+.complaint-form-page{ 
+  min-height: calc(100vh - 40px); 
+  background: #f8fafc; 
+  padding: 2rem 1.5rem; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.complaint-form{ 
+  width: 100%; 
+  max-width: 1000px; 
+  padding: 0; 
+  margin: 0 auto; 
+  box-sizing: border-box; 
+}
+
+.form-heading{ 
+  margin: 0 0 0.5rem 0; 
+  font-size: 1.8rem; 
+  color: var(--text); 
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Center header and form */
+.form-header{ 
+  width: 100%; 
+  max-width: 1000px; 
+  margin: 0 auto 1.5rem; 
+  padding: 0; 
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.form-title-area{ 
+  min-width: 0;
+  flex: 1;
+}
+
+/* Ensure cards span the content width and have consistent spacing */
+.form-card{ 
+  padding: 2rem; 
+  margin-bottom: 1.5rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid #e2e8f0;
+}
+
+.two-col{ 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px){ 
+  .two-col{ 
+    grid-template-columns: 1fr;
+  } 
+}
+
+.form-card h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 18px;
+  color: var(--text);
+  font-weight: 700;
+  border-bottom: 2px solid var(--input-focus);
+  padding-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 11px 13px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1.5px solid var(--input-border);
+  background: var(--input-bg);
+  box-sizing: border-box;
+  font-size: 14px;
+  color: var(--text);
+  font-family: inherit;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="number"]:hover,
+select:hover,
+textarea:hover,
+input[type="file"]:hover {
+  border-color: var(--input-focus);
+  background: var(--input-hover);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.1);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus,
+input[type="file"]:focus {
+  border-color: var(--input-focus);
+  background: var(--card);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23004a99' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.field-error {
+  margin-top: 6px;
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.help {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--input-border);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #004a99 0%, #0062cc 100%);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 74, 153, 0.2);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 74, 153, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 74, 153, 0.2);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.required {
+  color: #dc2626;
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+@media (min-width: 900px) {
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Back button (styled like original dashboard) */
+.back-btn {
+  margin: 20px 0;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #004a99 0%, #0062cc 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-btn:hover { 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 74, 153, 0.2);
+}
+
+.back-btn:active {
+  transform: translateY(0);
+}
+
+/* Small top-left back button + header */
+.small-back-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1.5px solid var(--input-border);
+  background: var(--card);
+  color: var(--text);
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.small-back-btn:hover { 
+  border-color: var(--input-focus);
+  background: var(--input-hover);
+  box-shadow: 0 4px 12px rgba(0, 74, 153, 0.15);
+  transform: translateY(-2px);
+}
+
+.small-back-btn:active {
+  transform: translateY(0);
+}
+
+.category-pill {
+  margin-top: 8px;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.1) 0%, rgba(2, 132, 199, 0.05) 100%);
+  color: var(--input-focus);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  border: 1.5px solid rgba(2, 132, 199, 0.3);
+  display: inline-block;
+}
+
+/* Voice input UI */
+.input-with-voice { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 10px;
+}
+
+.input-with-voice textarea { 
+  min-height: 120px;
+}
+
+.voice-btn {
+  padding: 11px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--input-border);
+  background: var(--card);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 50px;
+  margin-top: 8px;
+  color: var(--text);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.voice-btn:hover {
+  border-color: var(--input-focus);
+  background: var(--input-hover);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+}
+
+.voice-btn.listening {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  animation: pulse 1s infinite;
+  color: #dc2626;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.voice-feedback { 
+  margin-top: 8px; 
+  font-size: 13px; 
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .complaint-form-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-card {
+    padding: 1.5rem;
+  }
+
+  .form-heading {
+    font-size: 1.5rem;
+  }
+
+  .two-col {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .complaint-form-page {
+    padding: 1rem;
+  }
+
+  .form-card {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-heading {
+    font-size: 1.25rem;
+  }
+
+  .form-card h3 {
+    font-size: 15px;
+    margin-bottom: 1rem;
+  }
+
+  label {
+    font-size: 13px;
+    margin-top: 0.75rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  select,
+  textarea,
+  input[type="file"] {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 11px 20px;
+    font-size: 13px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}
