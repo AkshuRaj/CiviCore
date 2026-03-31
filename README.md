@@ -1,10 +1,10 @@
-# 🎯 Online Complaint Management System (OCMS)
+# Online Complaint Management System (OCMS)
 
 A comprehensive, production-ready web-based platform for registering, tracking, and resolving citizen complaints through intelligent multi-level hierarchy with real-time notifications and efficient workflow automation.
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Available Versions](#-available-versions)
@@ -24,7 +24,7 @@ A comprehensive, production-ready web-based platform for registering, tracking, 
 
 ---
 
-## 🌟 Project Overview
+## Project Overview
 
 The **Online Complaint Management System (OCMS)** is a scalable solution designed to streamline civic complaint handling by:
 
@@ -36,10 +36,10 @@ The **Online Complaint Management System (OCMS)** is a scalable solution designe
 
 ---
 
-## 📦 Available Versions
+## Available Versions
 
 ### **Version 1: Basic System** (`my-project/my-project`)
-**Status:** ✅ Functional | **Best For:** Small-scale implementations
+**Status:** Functional | **Best For:** Small-scale implementations
 
 **Features:**
 - Citizen registration & login (OTP-based)
@@ -53,7 +53,7 @@ The **Online Complaint Management System (OCMS)** is a scalable solution designe
 ---
 
 ### **Version 2: Advanced System** (`neww/SOA`) ⭐ RECOMMENDED
-**Status:** ✅ Production-ready | **Best For:** Enterprise-scale deployment
+**Status:** Production-ready | **Best For:** Enterprise-scale deployment
 
 **Features:**
 - All Version 1 features +
@@ -72,7 +72,7 @@ The **Online Complaint Management System (OCMS)** is a scalable solution designe
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### For Version 1 (Basic)
 ```bash
@@ -103,7 +103,7 @@ npm start
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -138,9 +138,9 @@ npm start
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 🏙️ For Citizens
+### For Citizens
 - ✅ Self-registration with email/OTP verification
 - ✅ Submit complaints with:
   - Category (16 departments)
