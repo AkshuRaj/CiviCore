@@ -1,0 +1,377 @@
+/* ─────────────────────────────────────────
+   StaffSignup.css  –  OCMS Staff Registration
+   ───────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --brand: #1e3c72;
+  --brand-light: #2a5298;
+  --accent: #4f8ef7;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warn: #f59e0b;
+  --bg: #f0f4ff;
+  --card-bg: #ffffff;
+  --border: #dce3f3;
+  --text: #1a2340;
+  --muted: #64748b;
+  --radius: 12px;
+  --shadow: 0 8px 32px rgba(30, 60, 114, 0.10);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.ss-root {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ── HEADER ── */
+.ss-header {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+  color: #fff;
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+}
+.ss-back-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.ss-back-btn:hover { background: rgba(255,255,255,0.28); }
+.ss-header-text h1 { font-size: 22px; font-weight: 700; letter-spacing: 0.5px; }
+.ss-header-text p  { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+
+/* ── CONTENT & PROGRESS ── */
+.ss-content { max-width: 860px; margin: 0 auto; padding: 32px 20px 60px; }
+
+.ss-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  position: relative;
+}
+.ss-progress::before {
+  content: '';
+  position: absolute;
+  top: 18px; left: 10%; right: 10%;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+.ss-progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+.ss-step-circle {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--muted);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  border: 3px solid var(--border);
+  transition: all 0.3s;
+}
+.ss-progress-step.active .ss-step-circle {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(30,60,114,0.15);
+}
+.ss-progress-step.done .ss-step-circle {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+.ss-progress-step span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: center;
+}
+.ss-progress-step.active span { color: var(--brand); font-weight: 700; }
+
+/* ── CARD ── */
+.ss-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  border: 1px solid var(--border);
+}
+
+.ss-step h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 8px;
+}
+.ss-subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* ── MESSAGE ── */
+.ss-message {
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ss-message--error   { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+.ss-message--success { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+
+/* ── ROLE GRID ── */
+.ss-role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.ss-role-card {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  background: #fff;
+}
+.ss-role-card:hover {
+  border-color: var(--role-color, var(--accent));
+  background: #f8faff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.ss-role-card.selected {
+  border-color: var(--role-color, var(--brand));
+  background: color-mix(in srgb, var(--role-color, var(--brand)) 8%, white);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--role-color, var(--brand)) 20%, transparent);
+}
+.ss-role-badge {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--role-color, var(--brand));
+  margin-bottom: 8px;
+}
+.ss-role-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.ss-role-scope {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--role-color, var(--brand));
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.ss-role-check {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--role-color, var(--brand));
+  color: #fff;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ── APPROVAL CHAIN ── */
+.ss-chain-info {
+  background: #f8faff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+.ss-chain-info h3 { font-size: 14px; font-weight: 700; margin-bottom: 14px; color: var(--text); }
+.ss-chain {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.chain-node {
+  padding: 6px 14px; border-radius: 20px;
+  font-size: 12px; font-weight: 600;
+}
+.chain-node.admin      { background: #1e3c72; color: #fff; }
+.chain-node.sec-admin  { background: #6c2eb9; color: #fff; }
+.chain-node.head       { background: #1565c0; color: #fff; }
+.chain-node.staff      { background: #00695c; color: #fff; }
+.chain-node.employee   { background: #e65100; color: #fff; }
+.chain-arrow           { color: var(--muted); font-size: 16px; font-weight: 700; }
+.chain-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* ── FORM GRID ── */
+.ss-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.ss-field { display: flex; flex-direction: column; gap: 6px; }
+.ss-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+.ss-field input,
+.ss-field select,
+.ss-field textarea {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #fff;
+  color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.ss-field input:focus,
+.ss-field select:focus,
+.ss-field textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(30,60,114,0.10);
+}
+.ss-field input:disabled,
+.ss-field select:disabled {
+  background: #f1f5f9; color: var(--muted); cursor: not-allowed;
+}
+.ss-field--full { grid-column: 1 / -1; }
+.ss-field--divider {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: 4px;
+}
+.ss-field--divider h3 { font-size: 15px; font-weight: 700; color: var(--brand); }
+
+.ss-pwd-match {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+.ss-pwd-match.ok  { color: var(--success); }
+.ss-pwd-match.bad { color: var(--danger); }
+
+/* ── BUTTONS ── */
+.ss-btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  font-family: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ss-btn--primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(30,60,114,0.25);
+}
+.ss-btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(30,60,114,0.35);
+}
+.ss-btn--primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.ss-btn--secondary {
+  background: #fff;
+  color: var(--brand);
+  border: 1.5px solid var(--border);
+}
+.ss-btn--secondary:hover { background: #f0f4ff; }
+
+.ss-btn-row {
+  display: flex; gap: 12px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.ss-login-link {
+  text-align: center; font-size: 13px; color: var(--muted); margin-top: 12px;
+}
+.ss-login-link a { color: var(--brand); font-weight: 600; text-decoration: none; }
+.ss-login-link a:hover { text-decoration: underline; }
+
+/* ── OTP STEP ── */
+.ss-step--otp { text-align: center; padding: 20px 0; }
+.ss-otp-icon { font-size: 56px; margin-bottom: 16px; }
+.ss-step--otp h2 { margin-bottom: 10px; }
+.ss-step--otp p  { color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
+.ss-otp-field { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 28px; }
+.ss-otp-field label { font-size: 13px; font-weight: 600; }
+.ss-otp-input {
+  width: 200px; text-align: center;
+  font-size: 28px; letter-spacing: 10px;
+  font-weight: 700; color: var(--brand);
+  padding: 14px;
+  border: 2px solid var(--border); border-radius: 12px;
+  outline: none;
+}
+.ss-otp-input:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(30,60,114,0.12); }
+.ss-step--otp .ss-btn-row { justify-content: center; }
+
+/* ── DONE STEP ── */
+.ss-step--done { text-align: center; padding: 20px 0; }
+.ss-done-icon { font-size: 64px; margin-bottom: 20px; animation: pop 0.5s ease; }
+@keyframes pop { 0% { transform: scale(0.4); opacity: 0; } 80% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; } }
+.ss-step--done h2 { margin-bottom: 10px; }
+.ss-step--done > p { color: var(--muted); margin-bottom: 24px; }
+
+.ss-approval-path {
+  background: #f8faff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 28px;
+}
+.ss-approval-path h3 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.ss-approval-path p  { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
+.ss-pending-note { color: var(--warn) !important; font-weight: 500 !important; }
+
+.ss-done-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .ss-card { padding: 24px 16px; }
+  .ss-form-grid { grid-template-columns: 1fr; }
+  .ss-role-grid  { grid-template-columns: 1fr; }
+  .ss-header { padding: 16px 20px; }
+  .ss-header-text h1 { font-size: 16px; }
+}

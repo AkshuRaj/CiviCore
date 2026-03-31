@@ -1,0 +1,139 @@
+/* StaffLogin.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --brand: #1e3c72;
+  --brand-light: #2a5298;
+  --bg: #f0f4ff;
+  --card-bg: #ffffff;
+  --border: #dce3f3;
+  --text: #1a2340;
+  --muted: #64748b;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warn: #f59e0b;
+  --radius: 14px;
+  --shadow: 0 8px 32px rgba(30,60,114,0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.sl-root { font-family: 'Inter', sans-serif; min-height: 100vh; background: var(--bg); }
+
+.sl-header {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+  color: #fff; padding: 24px 40px;
+  display: flex; align-items: center; gap: 24px;
+}
+.sl-back-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff; padding: 8px 18px; border-radius: 8px;
+  cursor: pointer; font-size: 14px; font-weight: 500;
+  transition: background 0.2s; white-space: nowrap;
+}
+.sl-back-btn:hover { background: rgba(255,255,255,0.28); }
+.sl-header-text h1 { font-size: 20px; font-weight: 700; }
+.sl-header-text p  { font-size: 13px; opacity: 0.80; margin-top: 4px; }
+
+.sl-content {
+  max-width: 520px; margin: 0 auto; padding: 48px 20px 80px;
+}
+.sl-card {
+  background: var(--card-bg); border-radius: var(--radius);
+  box-shadow: var(--shadow); border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* Tabs */
+.sl-tabs {
+  display: flex; border-bottom: 2px solid var(--border); background: #f8faff;
+}
+.sl-tab {
+  flex: 1; padding: 16px; font-size: 13px; font-weight: 600;
+  background: none; border: none; cursor: pointer;
+  color: var(--muted); transition: all 0.2s; font-family: inherit;
+}
+.sl-tab.active { color: var(--brand); border-bottom: 2px solid var(--brand); background: #fff; margin-bottom: -2px; }
+.sl-tab:hover:not(.active) { background: #eef2ff; }
+
+/* Message */
+.sl-message {
+  margin: 16px 32px 0;
+  padding: 12px 16px; border-radius: 8px;
+  font-size: 13px; font-weight: 500;
+}
+.sl-message--error  { background: #fee2e2; color: #b91c1c; }
+.sl-message--success{ background: #dcfce7; color: #166534; }
+.sl-message--warn   { background: #fef3c7; color: #92400e; }
+
+.sl-panel { padding: 32px; text-align: center; }
+.sl-icon { font-size: 48px; margin-bottom: 12px; }
+.sl-panel h2 { font-size: 22px; font-weight: 700; color: var(--brand); margin-bottom: 8px; }
+.sl-subtitle { color: var(--muted); font-size: 13px; line-height: 1.6; margin-bottom: 24px; }
+
+.sl-form { text-align: left; display: flex; flex-direction: column; gap: 16px; }
+.sl-field { display: flex; flex-direction: column; gap: 6px; }
+.sl-field label { font-size: 13px; font-weight: 600; color: var(--text); }
+.sl-field input {
+  padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px;
+  font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.2s;
+}
+.sl-field input:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(30,60,114,0.10); }
+
+.sl-btn {
+  width: 100%; padding: 13px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  color: #fff; border: none; border-radius: 9px;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+  font-family: inherit; transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(30,60,114,0.25);
+  margin-top: 4px;
+}
+.sl-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(30,60,114,0.35); }
+.sl-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.sl-links {
+  display: flex; justify-content: center; gap: 12px;
+  margin-top: 16px; font-size: 13px; color: var(--muted);
+}
+.sl-links a { color: var(--brand); font-weight: 600; text-decoration: none; }
+.sl-links a:hover { text-decoration: underline; }
+
+/* Role guide */
+.sl-role-guide { margin-top: 24px; padding: 16px; background: #f8faff; border-radius: 10px; border: 1px solid var(--border); text-align: left; }
+.sl-role-guide-title { font-size: 12px; font-weight: 700; color: var(--muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+.sl-role-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.sl-chip { padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #fff; }
+.sl-chip--primary-admin  { background: #1e3c72; }
+.sl-chip--secondary-admin{ background: #6c2eb9; }
+.sl-chip--head           { background: #1565c0; }
+.sl-chip--staff          { background: #00695c; }
+.sl-chip--employee       { background: #e65100; }
+
+/* Status card */
+.sl-status-card {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: #f8faff; border: 1.5px solid var(--status-color, #dce3f3);
+  border-radius: 12px; padding: 20px; margin-top: 24px; text-align: left;
+}
+.sl-status-icon { font-size: 32px; flex-shrink: 0; }
+.sl-status-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.sl-status-meta { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+.sl-status-badge {
+  display: inline-block; padding: 3px 12px; border-radius: 20px;
+  font-size: 11px; font-weight: 700; color: #fff; letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.sl-reject-reason { font-size: 12px; color: var(--danger); margin-top: 8px; }
+.sl-pending-msg   { font-size: 12px; color: var(--warn); margin-top: 8px; }
+.sl-approved-msg  { font-size: 13px; color: #166534; margin-top: 8px; }
+.sl-link-btn {
+  background: none; border: none; color: var(--brand);
+  font-weight: 700; cursor: pointer; font-size: inherit;
+  text-decoration: underline; font-family: inherit;
+}
+
+@media (max-width: 480px) {
+  .sl-header { padding: 16px 20px; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .sl-panel { padding: 20px 16px; }
+}

@@ -1,0 +1,106 @@
+/* Page background */
+.hr-page {
+    background: linear-gradient(135deg, #f4f6f9, #e9eef5);
+    min-height: 100vh;
+    padding: 40px;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+  }
+  
+  /* Form card */
+  .hr-form {
+    max-width: 950px;
+    margin: auto;
+    background: white;
+    padding: 40px 50px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+  
+  /* Main title */
+  .hr-form h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #0d47a1;
+  }
+  
+  /* Section titles */
+  .hr-form h3 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #0d47a1;
+    border-left: 5px solid #0d47a1;
+    padding-left: 12px;
+  }
+  
+  /* Labels */
+  .hr-form label {
+    font-weight: 600;
+    color: #333;
+    display: block;
+  }
+  
+  /* Inputs */
+  .hr-form input,
+  .hr-form select,
+  .hr-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 6px 0 14px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.2s;
+  }
+  
+  /* Focus effect */
+  .hr-form input:focus,
+  .hr-form select:focus,
+  .hr-form textarea:focus {
+    outline: none;
+    border-color: #0d47a1;
+    box-shadow: 0 0 0 2px rgba(13,71,161,0.1);
+  }
+  
+  /* Textarea */
+  .hr-form textarea {
+    min-height: 90px;
+    resize: vertical;
+  }
+  
+  /* Submit button */
+  .hr-form button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #0d47a1, #1565c0);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Button hover */
+  .hr-form button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(13,71,161,0.3);
+  }
+  
+  /* Required star */
+  .hr-form span {
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .hr-form {
+      padding: 25px;
+    }
+  }
+  

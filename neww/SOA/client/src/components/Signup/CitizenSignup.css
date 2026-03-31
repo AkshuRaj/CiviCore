@@ -1,0 +1,264 @@
+/* Page background */
+
+.signup-page {
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #445ea1 0, #ffffff 55%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Main card */
+
+.signup-card {
+  width: 100%;
+  max-width: 980px;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.96)), radial-gradient(circle at top left, rgba(59, 130, 246, 0.3), transparent);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 32px 80px rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  backdrop-filter: blur(18px);
+}
+
+/* Header */
+
+.signup-header {
+  margin-bottom: 1.5rem;
+}
+
+.signup-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.signup-header p {
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
+
+/* Info / error message */
+
+.signup-message {
+  margin-bottom: 0.9rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  background: rgba(30, 64, 175, 0.18);
+  border: 1px solid rgba(96, 165, 250, 0.8);
+}
+
+/* Sections */
+
+.signup-form,
+.signup-otp-form,
+.signup-complete {
+  margin-top: 0.4rem;
+}
+
+.signup-section {
+  border-radius: 16px;
+  padding: 0.9rem 1rem 1rem;
+  background: radial-gradient(circle at top, #3addbc 0, #020617 55%);
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.7);
+  margin-bottom: 0.9rem;
+}
+
+.signup-section h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #e5e7eb;
+}
+
+/* Grid layout */
+
+.signup-grid {
+  display: grid;
+  gap: 0.7rem 0.9rem;
+}
+
+@media (min-width: 800px) {
+  .signup-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+/* Labels + inputs */
+
+.field label {
+  color: #f5d8cb;
+  font-size: 1.2rem;
+}
+
+.field input,
+.field select {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.92);
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  padding: 0.42rem 0.8rem;
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+}
+
+.field input::placeholder {
+  color: #6b7280;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.7);
+  background: rgba(15, 23, 42, 0.98);
+}
+
+/* checkbox group */
+
+.field--checkboxes .checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.checkbox-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.checkbox-row input {
+  accent-color: #2563eb;
+}
+
+/* Consent box */
+
+.consent-box {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed rgba(148, 163, 184, 0.7);
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.consent-box label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.consent-box input[type="checkbox"] {
+  margin-top: 0.12rem;
+  accent-color: #22c55e;
+}
+
+.consent-warning {
+  font-size: 0.78rem;
+  color: #f97316;
+}
+
+/* Submit button */
+
+.signup-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #f9fafb;
+  background: linear-gradient(135deg, #2563eb, #22c55e);
+  box-shadow: 0 18px 40px rgba(34, 197, 94, 0.6);
+  transition: transform 0.18s, box-shadow 0.18s, opacity 0.18s;
+}
+
+.signup-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 55px rgba(59, 130, 246, 0.9);
+}
+
+.signup-submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* OTP step */
+
+.signup-otp-form {
+  border-radius: 16px;
+  padding: 1.2rem 1.1rem 1.4rem;
+  background: radial-gradient(circle at top left, #020617, #020617 55%);
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.85);
+}
+
+.signup-otp-form h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.signup-otp-form p {
+  font-size: 0.85rem;
+  color: #cbd5f5;
+  margin-bottom: 0.7rem;
+}
+
+/* Completion state */
+
+.signup-complete {
+  border-radius: 16px;
+  padding: 1.2rem 1.1rem 1.4rem;
+  background: radial-gradient(circle at top left, #022c22, #020617 70%);
+  border: 1px solid rgba(34, 197, 94, 0.6);
+  box-shadow: 0 24px 60px rgba(21, 128, 61, 0.85);
+}
+
+.signup-complete h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.signup-complete p {
+  font-size: 0.85rem;
+  color: #bbf7d0;
+}
+
+/* Mobile tweaks */
+
+@media (max-width: 600px) {
+  .signup-card {
+    padding: 1.4rem 1.1rem 1.6rem;
+  }
+
+  .signup-header h1 {
+    font-size: 1.45rem;
+  }
+
+  .signup-section {
+    padding: 0.8rem 0.8rem 0.9rem;
+  }
+}
