@@ -1,4 +1,4 @@
-# Online Complaint Management System (OCMS)
+# CiviCore - Online Complaint Management System 
 
 A comprehensive, production-ready web-based platform for registering, tracking, and resolving citizen complaints through intelligent multi-level hierarchy with real-time notifications and efficient workflow automation.
 
